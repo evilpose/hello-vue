@@ -3,9 +3,10 @@
     <h1>This is an about page</h1>
     <testSolt>
       <!-- 这种没有命名的叫做匿名插槽 -->
-      <div class="tmpl">
-        <span>这是从父组件传到子组件的</span>
-      </div>
+      <!-- <div class="tmpl">
+        <span class="tmp1">这是从父组件传到子组件的一</span>
+        <span>这是从父组件传到子组件的二</span>
+      </div> -->
       <!-- 具名插槽 -->
       <!-- 没有具名的html模板默认关联匿名插槽。 -->
       <!-- 简单的对于匿名和具名插槽理解，其实这就是子组件的一个占位符，从父组件传输值到子组件中，这样就可从父组件中自定义杨样式和内容（一种方式）,
@@ -15,21 +16,26 @@
       <div class="temp2" slot="test1">
         <span>这是具名插槽一，文字颜色的效果是在父组件控制的</span>
       </div>
-      <div class="temp3" slot="test2">
-        <!-- <span>这是具名插槽二，文字颜色的效果是在子组件控制的</span> -->
+      <!-- <div class="temp3" slot="test2">
         <span>{{me}}</span>
-      </div>
+      </div> -->
     </testSolt>
     <child>
       <!-- 作用域插槽：
       我的理解：作用域插槽是子组件传过来的数据，就像父子传值似的，用这种父组件  solt-scopr 和 子组件 v-bind 的方式，传递过来，
       然后父组件拿到了之后，再进行渲染， 再放回去，这样能在父组件中对数据进行样式的渲染来。暂时也没有想到应用场景-->
-      <template slot-scope="user">
+      <!-- <template slot-scope="user">
         <div class="newDiv"  v-for="(item, i) in user.data" :key="i">
           <span>{{item}}</span>
         </div>
+      </template> -->
+      <template slot-scope="user">
+        <ul>
+          <li v-for="(item ,i) in user.data" :key="i">{{item}}</li>
+        </ul>
       </template>
     </child>
+    <input type="text" name="" id="">
   </div>
 </template>
 <script>
@@ -37,6 +43,7 @@ import testSolt from '../components/test-solt'
 import child from '../components/child'
 
 export default {
+  name: 'about',
   components: {
     'testSolt': testSolt,
     'child': child

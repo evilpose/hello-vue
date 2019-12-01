@@ -2,9 +2,16 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/page3">page3</router-link>
     </div>
-    <router-view/>
+    <!-- <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view> -->
+    <keep-alive exclude="page3">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

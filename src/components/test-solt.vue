@@ -1,10 +1,11 @@
 <template>
     <div class="child">
         <h3>这里是子组件</h3>
-        <div class="myStyle">
+        <!-- <div class="myStyle">
             <slot name="test2"></slot>
-        </div>
-        <slot></slot>
+        </div> -->
+        <!-- <slot></slot> -->
+        <!-- <slot></slot> -->
         <slot name="test1"></slot>
     </div>
 </template>

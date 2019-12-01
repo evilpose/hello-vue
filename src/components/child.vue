@@ -3,6 +3,7 @@
     <h3>这里是子组件</h3>
     <!--  作用域插槽 -->
     <slot  :data="data"></slot>
+    <slot></slot>
   </div>
 </template>
 <script>

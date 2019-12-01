@@ -9,6 +9,7 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+    // meta: { keepAlive: false }
   },
   {
     path: '/about',
@@ -17,6 +18,13 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    // meta: { keepAlive: false }
+  },
+  {
+    path: '/page3',
+    name: 'page3',
+    component: () => import('../views/page3.vue')
+    // meta: { keepAlive: false }
   }
 ]
 
